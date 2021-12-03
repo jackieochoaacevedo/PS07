@@ -1,0 +1,75 @@
+---
+title: "PS07-Gapminder"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Gapminder
+
+This is an R Markdown format used for publishing markdown documents to GitHub.
+When you click the **Knit** button all R code chunks are run and a markdown 
+file (.md) suitable for publishing to GitHub is generated.
+
+
+This article describes how to create animation in R using the gganimate R 
+package.
+
+According to the article,*gganimate: How to Create Plots with Beautiful 
+Animation in R*,
+"Gganimate is an extension of the ggplot2 package for creating animated ggplots.
+It provides a range of new functionality that can be added to the plot object 
+in order to customize how it should change with time."
+
+"Key features of gganimate:
+
+1.transitions: you want your data to change
+2.views: you want your viewpoint to change
+3. shadows: you want the animation to have memory" - from article
+
+## Including Code
+
+You can include R code in the document as follows:
+
+```{r cars}
+library(ggplot2)
+library(gganimate)
+theme_set(theme_bw())
+library(gapminder)
+head(gapminder)
+```
+Code is taken from here: ^[Alboukadel, Transition_reveal, 
+Draga, Tiago, W, C., Danhrogers, Thaung, K., Sylvan, 
+Kassambara, Kebede, M., Ankit, G, P., Saldaña, S., Mark, 
+Lockwood, R. N., Petchulia, Z., Samuel, D. D. K., Artjuch, D., Mehmet, 
+&amp; Anthony. (2019, December 25). Gganimate: How to create plots with 
+beautiful animation in R. Datanovia. Retrieved December 3, 2021, from https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-
+beautiful-animation-in-r/. ] 
+## Including Plots
+
+You can also embed plots, for example:
+Note: the following code is also taken from the article
+```{r pressure, echo=FALSE}
+p <- ggplot(
+  gapminder, 
+  aes(x = gdpPercap, y=lifeExp, size = pop, colour = country)
+  ) +
+  geom_point(show.legend = FALSE, alpha = 0.7) +
+  scale_color_viridis_d() +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  labs(x = "GDP per capita", y = "Life expectancy")
+p
+
+
+ 
+p + facet_wrap(~continent) +
+  transition_time(year) +
+  labs(title = "Year: {frame_time}")
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to 
+prevent printing of the R code that generated the plot.

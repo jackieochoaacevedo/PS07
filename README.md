@@ -69,7 +69,7 @@ p + facet_wrap(~continent) +
 
 ## Reference
 
-[1]
+This is the citation [1]
 
 [1] Alboukadel, Transition_reveal, Draga, Tiago, W, C., Danhrogers,
 Thaung, K., Sylvan, Kassambara, Kebede, M., Ankit, G, P., Saldaña, S.,

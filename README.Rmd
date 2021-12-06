@@ -77,7 +77,8 @@ p + facet_wrap(~continent) +
 
 
 ##  Reference
-^[Alboukadel, Transition_reveal, 
+
+This is the citation ^[Alboukadel, Transition_reveal, 
 Draga, Tiago, W, C., Danhrogers, Thaung, K., Sylvan, 
 Kassambara, Kebede, M., Ankit, G, P., Saldaña, S., Mark, 
 Lockwood, R. N., Petchulia, Z., Samuel, D. D. K., Artjuch, D., Mehmet, 

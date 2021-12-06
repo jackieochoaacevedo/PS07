@@ -3,10 +3,6 @@ PS07-Gapminder
 
 ## Gapminder
 
-This is an R Markdown format used for publishing markdown documents to
-GitHub. When you click the **Knit** button all R code chunks are run and
-a markdown file (.md) suitable for publishing to GitHub is generated.
-
 This article describes how to create animation in R using the gganimate
 R package.
 
@@ -18,9 +14,11 @@ change with time.”
 
 “Key features of gganimate:
 
-1.transitions: you want your data to change 2.views: you want your
-viewpoint to change 3. shadows: you want the animation to have memory” -
-from article
+1.transitions: you want your data to change 
+
+2.views: you want your viewpoint to change 
+
+3. shadows: you want the animation to have memory” -from article
 
 ## Including Code
 

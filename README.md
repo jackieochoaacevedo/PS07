@@ -1,7 +1,7 @@
 PS07-Animation in R
 ================
 
-## Gapminder
+# Using Gapminder for animation
 
 This article describes how to create animation in R using the gganimate
 R package.
@@ -12,44 +12,65 @@ creating animated ggplots. It provides a range of new functionality that
 can be added to the plot object in order to customize how it should
 change with time.”
 
-These are the following key features of gganinmate stated from the article:
+These are the following key features of gganimate stated from the
+article:
 
-1.Transitions: you want your data to change 
+1.Transitions: you want your data to change
 
-2.Views: you want your viewpoint to change 
+2.Views: you want your viewpoint to change
 
 3.Shadows: you want the animation to have memory
 
-## The code for animation
-
+## The Packages needed
 
 ``` r
 library(ggplot2)
 library(gganimate)
 theme_set(theme_bw())
 library(gapminder)
-head(gapminder)
 ```
 
-    ## # A tibble: 6 × 6
-    ##   country     continent  year lifeExp      pop gdpPercap
-    ##   <fct>       <fct>     <int>   <dbl>    <int>     <dbl>
-    ## 1 Afghanistan Asia       1952    28.8  8425333      779.
-    ## 2 Afghanistan Asia       1957    30.3  9240934      821.
-    ## 3 Afghanistan Asia       1962    32.0 10267083      853.
-    ## 4 Afghanistan Asia       1967    34.0 11537966      836.
-    ## 5 Afghanistan Asia       1972    36.1 13079460      740.
-    ## 6 Afghanistan Asia       1977    38.4 14880372      786.
+## Static Plot
 
-Code is taken from here: [1] ## Including Plots
+Note: the following code is also taken from the article
 
-You can also embed plots, for example: Note: the following code is also
-taken from the article
-![](README_files/figure-gfm/pressure-2.png)<!-- -->![](README_files/figure-gfm/pressure-1.gif)<!-- -->
+``` r
+p <- ggplot(
+  gapminder, 
+  aes(x = gdpPercap, y=lifeExp, size = pop, colour = country)
+  ) +
+  geom_point(show.legend = FALSE, alpha = 0.7) +
+  scale_color_viridis_d() +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  labs(x = "GDP per capita", y = "Life expectancy")
+p
+```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
-##Reference
+![](README_files/figure-gfm/pressure-1.png)<!-- -->
+
+## The Basics
+
+1.  `transition_time()`. The transition length between the states will
+    be set to correspond to the actual time difference between them.
+
+2.  Label variables: `frame_time`. Gives the time that the current frame
+    corresponds to
+
+## Applying the Basics for transitions through years
+
+``` r
+p + facet_wrap(~continent) +
+  transition_time(year) +
+  labs(title = "Year: {frame_time}")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-1-1.gif)<!-- -->
+
+## Reference
+
+[1]
+
 [1] Alboukadel, Transition_reveal, Draga, Tiago, W, C., Danhrogers,
 Thaung, K., Sylvan, Kassambara, Kebede, M., Ankit, G, P., Saldaña, S.,
 Mark, Lockwood, R. N., Petchulia, Z., Samuel, D. D. K., Artjuch, D.,

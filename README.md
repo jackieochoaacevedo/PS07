@@ -14,11 +14,11 @@ change with time.”
 
 “Key features of gganimate:
 
-1.transitions: you want your data to change 
+1.Transitions: you want your data to change 
 
-2.views: you want your viewpoint to change 
+2.Views: you want your viewpoint to change 
 
-3. shadows: you want the animation to have memory” -from article
+3. Shadows: you want the animation to have memory” -from article
 
 ## Including Code
 

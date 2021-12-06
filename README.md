@@ -12,17 +12,16 @@ creating animated ggplots. It provides a range of new functionality that
 can be added to the plot object in order to customize how it should
 change with time.”
 
-“Key features of gganimate:
+These are the following key features of gganinmate stated from the article:
 
 1.Transitions: you want your data to change 
 
 2.Views: you want your viewpoint to change 
 
-3. Shadows: you want the animation to have memory” -from article
+3.Shadows: you want the animation to have memory
 
-## Including Code
+## The code for animation
 
-You can include R code in the document as follows:
 
 ``` r
 library(ggplot2)
@@ -50,7 +49,7 @@ taken from the article
 
 Note that the `echo = FALSE` parameter was added to the code chunk to
 prevent printing of the R code that generated the plot.
-
+##Reference
 [1] Alboukadel, Transition_reveal, Draga, Tiago, W, C., Danhrogers,
 Thaung, K., Sylvan, Kassambara, Kebede, M., Ankit, G, P., Saldaña, S.,
 Mark, Lockwood, R. N., Petchulia, Z., Samuel, D. D. K., Artjuch, D.,

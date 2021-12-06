@@ -1,4 +1,4 @@
-PS07-Gapminder
+PS07-Animation in R
 ================
 
 ## Gapminder
